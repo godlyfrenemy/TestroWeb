@@ -1,16 +1,17 @@
 <link rel="stylesheet" type="text/css" href="/styles/pop-up.css">
-<section class="u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-valign-middle u-dialog-section-4" id="question-<?=$questionId?>">
+<section class="u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-valign-middle u-dialog-section-4" id="question-<?=$question['question_id']?>">
     <div class="u-align-center u-container-align-center u-container-style u-dialog u-gradient u-dialog-1">
         <div class="u-container-layout u-valign-middle u-container-layout-1">
             <div class="u-clearfix u-expanded-width u-gutter-6 u-layout-wrap u-layout-wrap-1">
-                <div class="u-gutter-0 u-layout" style="height: 80vh; margin: 30px">
+                <div class="u-gutter-0 u-layout">
                     <form class="u-layout-col">
                         <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-1">
                             <div class="u-border-2 u-border-grey-75 u-container-layout u-container-layout-2">
                                 <label class="u-label" for="question-name">
                                     Запитання
                                 </label>
-                                <input class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-1" id="question-name" name="contact-name" placeholder="Введіть запитання" required="" type="text">
+                                <input class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-1" id="question-name" name="contact-name" placeholder="Введіть запитання" required="" type="text"
+                                value="<?=$question['question_name']?>">
                                 </input>
                             </div>
                         </div>
@@ -29,6 +30,19 @@
                                 <div class="u-expanded-width u-list u-list-1">
                                     <div class="u-repeater u-repeater-1">
                                         
+                                        <?php
+                                            $mysql = new mysqli("localhost", "root", "", "u981289406_testro_main");  
+                                            $mysql->autocommit(true);
+                                            $query = "SELECT * FROM `answers` WHERE `question_id` = " . $question['question_id'];
+                                            $result = $mysql->query($query);
+                                            $answer_number = 1;
+                                            while ($answer = $result->fetch_assoc()) {
+                                                include("answer-element-include.php");
+                                                $answer_number++;
+                                            }                                           
+                                            $mysql->close();
+                                        ?>
+
                                     </div>
                                 </div>
                                 <a class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-5" href="https://nicepage.com/website-templates">

@@ -11,7 +11,6 @@
         </div>
     </div>
     <?php
-        $questionId = $question['question_id'];
         include("pop-up.php");
     ?>
 </div>

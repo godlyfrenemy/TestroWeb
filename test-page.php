@@ -17,7 +17,7 @@
         $result = $mysql->query($query);
         $questions = array();
         while ($question = $result->fetch_assoc()) {
-                $questions[] = $question;
+            $questions[] = $question;
         }
         return $questions;      
     }
