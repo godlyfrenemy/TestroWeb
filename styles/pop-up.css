@@ -1,0 +1,229 @@
+    .u-dialog-section-4 .u-dialog-1 {
+        width: 645px;
+        min-height: 813px;
+        overflow-y: auto;
+        background-image: linear-gradient(#eafdfc, #ccd3db);
+        margin: 60px auto;
+    }
+    .u-dialog-section-4 .u-container-layout-1 {
+        padding: 30px 30px 22px;
+    }
+    .u-dialog-section-4 .u-layout-wrap-1 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .u-dialog-section-4 .u-layout-cell-1 {
+        min-height: 145px;
+    }
+    .u-dialog-section-4 .u-container-layout-2 {
+        padding: 30px;
+    }
+    .u-dialog-section-4 .u-text-1 {
+        font-size: 1.66667rem;
+        margin: 25px auto 0;
+    }
+    .u-dialog-section-4 .u-layout-cell-2 {
+        min-height: 116px;
+    }
+    .u-dialog-section-4 .u-container-layout-3 {
+        padding: 10px 12px;
+    }
+    .u-dialog-section-4 .u-text-2 {
+        margin: 32px auto 0;
+    }
+    .u-dialog-section-4 .u-layout-cell-3 {
+        min-height: 481px;
+    }
+    .u-dialog-section-4 .u-container-layout-4 {
+        padding: 20px 30px;
+    }
+    .u-dialog-section-4 .u-text-3 {
+        width: 262px;
+        margin: 0 auto;
+    }
+    .u-dialog-section-4 .u-list-1 {
+        margin: 20px 0 0;
+    }
+    .u-dialog-section-4 .u-repeater-1 {
+        grid-template-columns: repeat(2, calc(50% - 5px));
+        min-height: 296px;
+        grid-gap: 10px;
+    }
+    .u-dialog-section-4 .u-container-layout-5 {
+        padding: 10px 0;
+    }
+    .u-dialog-section-4 .u-text-4 {
+        font-size: 1.27778rem;
+        margin: 0 10px;
+    }
+    .u-dialog-section-4 .u-btn-1 {
+        border-style: solid;
+        font-weight: 700;
+        font-size: 0.833333rem;
+        margin: 54px auto 0;
+        padding: 6px 31px 6px 30px;
+    }
+    .u-dialog-section-4 .u-container-layout-6 {
+        padding: 10px 0;
+    }
+    .u-dialog-section-4 .u-text-5 {
+        font-size: 1.27778rem;
+        margin: 0 10px;
+    }
+    .u-dialog-section-4 .u-btn-2 {
+        border-style: solid;
+        font-weight: 700;
+        font-size: 0.833333rem;
+        margin: 54px auto 0;
+        padding: 6px 31px 6px 30px;
+    }
+    .u-dialog-section-4 .u-container-layout-7 {
+        padding: 10px 0;
+    }
+    .u-dialog-section-4 .u-text-6 {
+        font-size: 1.27778rem;
+        margin: 0 10px;
+    }
+    .u-dialog-section-4 .u-btn-3 {
+        border-style: solid;
+        font-weight: 700;
+        font-size: 0.833333rem;
+        margin: 54px auto 0;
+        padding: 6px 31px 6px 30px;
+    }
+    .u-dialog-section-4 .u-container-layout-8 {
+        padding: 10px 0;
+    }
+    .u-dialog-section-4 .u-text-7 {
+        font-size: 1.27778rem;
+        margin: 0 10px;
+    }
+    .u-dialog-section-4 .u-btn-4 {
+        border-style: solid;
+        font-weight: 700;
+        font-size: 0.833333rem;
+        margin: 54px auto 0;
+        padding: 6px 31px 6px 30px;
+    }
+    .u-dialog-section-4 .u-btn-5 {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.777778rem;
+        letter-spacing: 1px;
+        margin: 29px auto 0;
+    }
+    .u-dialog-section-4 .u-icon-1 {
+        width: 40px;
+        height: 40px;
+        background-image: none;
+        padding: 5px;
+    }
+    @media (max-width: 1199px) {
+        .u-dialog-section-4 .u-dialog-1 {
+            width: 645px;
+        }
+        .u-dialog-section-4 .u-layout-wrap-1 {
+            position: relative;
+        }
+        .u-dialog-section-4 .u-layout-cell-1 {
+            min-height: 120px;
+            background-position: 50% 50%;
+        }
+        .u-dialog-section-4 .u-layout-cell-2 {
+            min-height: 96px;
+        }
+        .u-dialog-section-4 .u-layout-cell-3 {
+            min-height: 397px;
+        }
+        .u-dialog-section-4 .u-text-3 {
+            width: 262px;
+        }
+        .u-dialog-section-4 .u-list-1 {
+            margin-right: initial;
+            margin-left: initial;
+        }
+        .u-dialog-section-4 .u-repeater-1 {
+            min-height: 296px;
+        }
+        .u-dialog-section-4 .u-text-4 {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .u-dialog-section-4 .u-text-5 {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .u-dialog-section-4 .u-text-6 {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .u-dialog-section-4 .u-text-7 {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+    @media (max-width: 991px) {
+        .u-dialog-section-4 .u-layout-cell-1 {
+            min-height: 92px;
+        }
+        .u-dialog-section-4 .u-layout-cell-2 {
+            min-height: 100px;
+        }
+        .u-dialog-section-4 .u-layout-cell-3 {
+            min-height: 100px;
+        }
+        .u-dialog-section-4 .u-repeater-1 {
+            grid-template-columns: 100%;
+        }
+    }
+    @media (max-width: 767px) {
+        .u-dialog-section-4 .u-dialog-1 {
+            width: 540px;
+        }
+        .u-dialog-section-4 .u-container-layout-1 {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .u-dialog-section-4 .u-layout-cell-1 {
+            min-height: 69px;
+        }
+        .u-dialog-section-4 .u-container-layout-2 {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .u-dialog-section-4 .u-container-layout-3 {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .u-dialog-section-4 .u-container-layout-4 {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .u-dialog-section-4 .u-text-4 {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .u-dialog-section-4 .u-text-5 {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .u-dialog-section-4 .u-text-6 {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .u-dialog-section-4 .u-text-7 {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+    @media (max-width: 575px) {
+        .u-dialog-section-4 .u-dialog-1 {
+            width: 340px;
+        }
+        .u-dialog-section-4 .u-layout-cell-1 {
+            min-height: 43px;
+        }
+        .u-dialog-section-4 .u-text-1 {
+            font-size: 1.5rem;
+        }
+    }
