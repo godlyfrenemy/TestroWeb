@@ -27,7 +27,7 @@
                                         Варіанти відповідей
                                     </h4>
                                     <div class="u-expanded-width u-list u-list-1">
-                                        <div id="answers" class="u-repeater u-repeater-1">
+                                        <div id="answers-<?=$question['question_id']?>" class="u-repeater u-repeater-1">
                                             <?php include("utils/print-answers.php"); ?>
                                         </div>
                                     </div>

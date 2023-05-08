@@ -99,7 +99,7 @@
                                                 <div class="u-repeater u-repeater-1">
                                                     <?php 
                                                       if(count($testQuestions) == 0)
-                                                        echo '<h3 class="u-align-center u-text">Жодного завдання не додано((9</h3>';
+                                                        echo '<h4 class="u-align-center u-text">Тест пустий, додайте запитання кнопкою справа</h4>';
                                                       else{
                                                         $list_item_number = 1;
                                                         foreach ($testQuestions as $question)
@@ -156,8 +156,7 @@
             </div>
         </section>
         <?php 
-          require_once("footer.html"); 
-          require_once("pop-up.php");    
+          require_once("footer.html");    
         ?>
         </body>
 </html>

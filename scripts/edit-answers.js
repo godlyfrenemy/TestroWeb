@@ -1,6 +1,6 @@
 $(document).ready(function(){
     function changeAnswers(data){
-        $.post('utils/remove-answers.php', data);
+        $.post('utils/ajax-change-correct-answer.php', data);
     }
 
     function showAnswers(_data) {
@@ -13,15 +13,16 @@ $(document).ready(function(){
                 resultHTML = data;
             }
         }).done(function(){      
-            $('#answers').html(resultHTML).show();
+            $('#answers-' + _data['question']).html(resultHTML).show();
         });
     }
 
-    $('#answers').on("click", ".assign-answer", function(e){
+    $('body').on("click", ".assign-answer", function(e){
         e.preventDefault();
+        console.log('start');
         var data = {
             'answer': $(this).val(), 
-            'question': $("#question-" + $(this).val()).val() 
+            'question': $("#question-answer-" + $(this).val()).val() 
         };
         console.log(data);
         changeAnswers(data);

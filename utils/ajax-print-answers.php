@@ -7,10 +7,6 @@
         $result = $mysql->query($query);
         $index = 1;
         while ($answer_data = $result->fetch_assoc()) {
-                $answer = array(
-                    'index' => $index++,
-                    'answer_data' => $answer_data
-                );
                 include("{$_SERVER['DOCUMENT_ROOT']}/answer-element-include.php");
         }                                           
         $mysql->close();
