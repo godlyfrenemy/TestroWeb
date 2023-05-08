@@ -69,6 +69,8 @@
         </title>
         <?php include_once("utils/common-head.php"); ?>
         <link href="/styles/test-page.css" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script class="u-script" type="text/javascript" src="scripts/edit-answers.js" defer=""></script>
         </link>
     </head>
     <body class="u-body u-xl-mode" data-lang="ru">
