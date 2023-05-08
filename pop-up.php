@@ -10,7 +10,7 @@
                                     <label class="u-label" for="question-name">
                                         Запитання
                                     </label>
-                                    <input class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-1" id="question-name" name="question-name" placeholder="Введіть запитання" required="" type="text" value="<?=$question['question_name']?>">
+                                    <input class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-1" id="question-name" name="question-name" placeholder="Введіть запитання" type="text" value="<?=$question['question_name']?>" required>
                                     </input>
                                 </div>
                             </div>

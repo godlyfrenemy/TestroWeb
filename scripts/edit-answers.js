@@ -19,12 +19,10 @@ $(document).ready(function(){
 
     $('body').on("click", ".assign-answer", function(e){
         e.preventDefault();
-        console.log('start');
         var data = {
             'answer': $(this).val(), 
             'question': $("#question-answer-" + $(this).val()).val() 
         };
-        console.log(data);
         changeAnswers(data);
         showAnswers(data);
     });

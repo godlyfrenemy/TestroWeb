@@ -71,6 +71,7 @@
         <link href="/styles/test-page.css" rel="stylesheet" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script class="u-script" type="text/javascript" src="scripts/edit-answers.js" defer=""></script>
+        <script class="u-script" type="text/javascript" src="scripts/edit-text-input.js" defer=""></script>
         </link>
     </head>
     <body class="u-body u-xl-mode" data-lang="ru">
@@ -84,8 +85,10 @@
                                 <div class="u-layout-col">
                                     <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">
                                         <div class="u-container-layout u-container-layout-1">
-                                            <h3 class="u-align-center u-text" style="color: red;">
-                                                <?php echo $testInfo['test_name']; ?>
+                                            <input type="hidden" id="test-id" value="<?=$testInfo['test_id']?>">
+                                            <h3 class="u-align-center u-text">
+                                                <input class="editable-test-name u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-1" id="question-name" name="question-name" placeholder="Введіть запитання" required="" type="text" value="<?=$testInfo['test_name']?>" id="editable-test-name">
+                                                 </input>
                                             </h3>
                                         </div>
                                     </div>
