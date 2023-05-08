@@ -10,7 +10,7 @@
                                     <label class="u-label" for="question-name">
                                         Запитання
                                     </label>
-                                    <input class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-1" id="question-name" name="question-name" placeholder="Введіть запитання" type="text" value="<?=$question['question_name']?>" required>
+                                    <input class="editable-question-name u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-1" name="question-name" placeholder="Введіть запитання" type="text" value="<?=$question['question_name']?>" id="<?=$question['question_id']?>" required>
                                     </input>
                                 </div>
                             </div>
@@ -40,7 +40,7 @@
                     </div>
                 </div>
             </div>
-            <button class="u-border-3 u-border-palette-1-base u-custom-color-2 u-dialog-close-button u-icon u-icon-circle u-text-grey-70 u-icon-1">
+            <button class="close-module-window-button u-border-3 u-border-palette-1-base u-custom-color-2 u-dialog-close-button u-icon u-icon-circle u-text-grey-70 u-icon-1">
                 <svg class="u-svg-link" preserveaspectratio="xMidYMin slice" style="" viewbox="0 0 16 16">
                     <use xlink:href="#svg-efe9">
                     </use>
