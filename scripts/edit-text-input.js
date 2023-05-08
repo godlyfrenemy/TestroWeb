@@ -1,15 +1,5 @@
 $(document).ready(function() {
-    $(".editable-test-name").on("focusout", function(event){
-        var _tableName = 'tests';
-        var _result = {
-            name: 'test_name',
-            value: $(".editable-test-name").val()
-        };
-        var _condition = {
-            name: 'test_id',
-            value: $('#test-id').val()
-        };
-
+    function modify(_tableName, _result, _condition){
         $.ajax({
             type: "POST",
             url: 'utils/modify-row.php',
@@ -19,6 +9,20 @@ $(document).ready(function() {
                 condition: _condition
             }
         });
+    }
+
+    $(".editable-test-name").on("focusout", function(event){
+        var _tableName = 'tests';
+        var _result = {
+            name: 'test_name',
+            value: $(this).val()
+        };
+        var _condition = {
+            name: 'test_id',
+            value: $(this).attr('id')
+        };
+
+        modify(_tableName, _result, _condition);
     });
 
     $(".editable-test-name").on("keydown", function(event){

@@ -85,9 +85,8 @@
                                 <div class="u-layout-col">
                                     <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">
                                         <div class="u-container-layout u-container-layout-1">
-                                            <input type="hidden" id="test-id" value="<?=$testInfo['test_id']?>">
                                             <h3 class="u-align-center u-text">
-                                                <input class="editable-test-name u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-1" id="question-name" name="question-name" placeholder="Введіть запитання" required="" type="text" value="<?=$testInfo['test_name']?>" id="editable-test-name">
+                                                <input class="editable-test-name u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-1" name="question-name" placeholder="Введіть запитання" required="" type="text" value="<?=$testInfo['test_name']?>" id="<?=$testInfo['test_id']?>">
                                                  </input>
                                             </h3>
                                         </div>
