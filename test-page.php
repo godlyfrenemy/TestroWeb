@@ -72,6 +72,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script class="u-script" type="text/javascript" src="scripts/edit-answers.js" defer=""></script>
         <script class="u-script" type="text/javascript" src="scripts/edit-text-input.js" defer=""></script>
+        <script class="u-script" type="text/javascript" src="scripts/delete-data.js" defer=""></script>
         </link>
     </head>
     <body class="u-body u-xl-mode" data-lang="ru">
@@ -142,11 +143,20 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a class="u-align-center u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-gradient u-none u-radius-4 u-text-body-alt-color u-btn-3" href="/utils/add-test-question.php?testId=<?=$_GET['testId'];?>">
+                                            <br>
+                                            <br>
+                                            <a class="u-align-center u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-gradient u-none u-radius-4 u-text-body-alt-color u-btn-3" href="/utils/add-test-question.php?testId=<?=$_GET['testId'];?>" style="margin: 15px auto 0;">
                                                 <span class="u-file-icon u-icon">
                                                     <img alt="" src="/images/1286857.png"/>
                                                 </span>
                                                 Додати питання
+                                            </a>
+                                        
+                                            <a class="delete-test u-align-center u-border-2 u-btn u-btn-round u-gradient u-none u-radius-4 u-btn-3 u-border-palette-2-base u-hover-palette-2-base u-text-hover-white" id="<?=$_GET['testId'];?>" style="margin: 15px auto 0;">
+                                                <span class="u-file-icon u-icon">
+                                                    <img alt="" src="/images/cross.png"/>
+                                                </span>
+                                                &nbsp;Видалити тест&nbsp;
                                             </a>
                                         </div>
                                     </div>

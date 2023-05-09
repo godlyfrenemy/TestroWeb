@@ -1,4 +1,18 @@
-$(document).ready(function() {
+$(document).ready(function() {  
+    function setColorDamping(object, color){
+        object.css({'border-color': color + "0)"});
+        setTimeout(() => { 
+            object.css({'border-color': color + "255)"});
+        }, 500);
+    } 
+
+    function colorDamping(object, color, originalColor){
+        setColorDamping(object, color);
+        setTimeout(() => { 
+            setColorDamping(object, originalColor);
+        }, 2500);
+    }
+
     function modify(object, _tableName, _result, _condition){
         $.ajax({
             type: "POST",
@@ -7,6 +21,9 @@ $(document).ready(function() {
                 tableName: _tableName,
                 result: _result,
                 condition: _condition
+            },
+            success: function(data){
+                colorDamping(object, 'rgba(133,224,133,', 'rgba(0,0,0,');               
             }
         });
     }
@@ -27,12 +44,12 @@ $(document).ready(function() {
 
     $(".editable-test-name").on("keydown", function(event){
         if(event.key == "Enter") {
-            $(this).trigger("focusout");
+            $(this).blur();
         };
     });
 
     $(".editable-answer-name").on("focusout", function(event){
-        var _tableName = 'answers';
+       var _tableName = 'answers';
         var _result = {
             name: 'text',
             value: $(this).val()
@@ -47,7 +64,7 @@ $(document).ready(function() {
 
     $(".editable-answer-name").on("keydown", function(event){
         if(event.key == "Enter") {
-            $(this).trigger("focusout");
+           $(this).blur();
         };
     });
 
@@ -67,7 +84,7 @@ $(document).ready(function() {
 
     $(".editable-question-name").on("keydown", function(event){
         if(event.key == "Enter") {
-            $(this).trigger("focusout");
+            $(this).blur();
         };
     });
 

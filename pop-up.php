@@ -31,8 +31,11 @@
                                             <?php include("utils/print-answers.php"); ?>
                                         </div>
                                     </div>
-                                    <a class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-5" href="https://nicepage.com/website-templates">
-                                        Зберегти запитання
+                                    <a class="delete-question u-align-center u-border-2 u-btn u-btn-round u-gradient u-none u-radius-4 u-btn-5 u-border-palette-2-base u-hover-palette-2-base u-text-hover-white" id="<?=$question['question_id']?>">
+                                        <span class="u-file-icon u-icon">
+                                            <img alt="" src="/images/cross.png"/>
+                                        </span>
+                                        Видалити питання
                                     </a>
                                 </div>
                             </div>

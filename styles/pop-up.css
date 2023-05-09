@@ -1,8 +1,13 @@
+    button.active {
+        cursor: pointer;
+    }
+
     .u-dialog-section-4 .u-dialog-1 {
-        width: 645px;
+        width: 60vw;
         overflow-y: auto;
         background-image: linear-gradient(#eafdfc, #ccd3db);
         margin: 60px auto;
+        padding: 10px;
     }
     .u-dialog-section-4 .u-container-layout-1 {
         padding: 30px 30px 22px;
@@ -87,7 +92,7 @@
         border-style: solid;
         font-weight: 700;
         font-size: 0.833333rem;
-        margin: 54px auto 0;
+        margin: 0 auto;
         padding: 6px 31px 6px 30px;
     }
     .u-dialog-section-4 .u-container-layout-8 {

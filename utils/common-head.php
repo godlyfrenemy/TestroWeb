@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="styles/nicepage.css" media="screen"/>
 <script class="u-script" type="text/javascript" src="scripts/jquery-1.9.1.min.js" defer=""></script>
 <script class="u-script" type="text/javascript" src="scripts/nicepage.js" defer=""></script>
+<script class="u-script" type="text/javascript" src="scripts/sweetalert2/sweetalert2.all.js" defer=""></script>
 <script type="application/ld+json">
 {
         "@context": "http://schema.org",

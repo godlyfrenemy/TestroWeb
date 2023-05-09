@@ -1,0 +1,49 @@
+$(document).ready(function() {   
+    function deleteData(object, name, _tableName, _condition, afterSuccess) {
+        Swal.fire({
+          title: 'Ви впевнені?',
+          text: name + " буде неможливо відновити!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Так, видаліть вже його!',
+          cancelButtonText: 'Віддай сало! (відмінити)'
+        }).then((result) => {
+            if (result.isConfirmed){
+                $.ajax({
+                    type: "POST",
+                    url: 'utils/delete-row.php',
+                    data: {
+                        tableName: _tableName,
+                        condition: _condition
+                    },
+                    success: afterSuccess()
+                });
+            }
+        });
+    }
+
+    $(".delete-question").on("click", function(event){
+        var _tableName = 'questions';
+        var _condition = {
+            name: 'question_id',
+            value: $(this).attr('id')
+        };
+
+        var message = "Запитання"
+        function afterSuccess(){ window.location.reload(); }
+        deleteData($(this), message, _tableName, _condition, afterSuccess);
+    });
+    $(".delete-test").on("click", function(event){
+        var _tableName = 'tests';
+        var _condition = {
+            name: 'test_id',
+            value: $(this).attr('id')
+        };
+
+        var message = "Тест"
+        function afterSuccess(){  window.location.replace("cabinet.php"); }
+        deleteData($(this), message, _tableName, _condition, afterSuccess);
+    });
+});
