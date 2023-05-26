@@ -11,6 +11,7 @@ $(document).ready(function(){
             data: _data,
             success: function(data) {               
                 resultHTML = data;
+                $('#answers-' + _data['question']).html(resultHTML).show()
             }
         }).done(function(){      
             $('#answers-' + _data['question']).html(resultHTML).show();

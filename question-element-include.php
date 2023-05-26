@@ -1,5 +1,5 @@
 <?php
-    $border_class = is_null($question['answer_id']) ? "u-border-3 u-border-palette-2" : "u-border-2 u-border-grey-75";
+    $border_class = is_null($question['correct_answer_id']) ? "u-border-3 u-border-palette-2" : "u-border-2 u-border-grey-75";
 ?>
 <div>
     <div class=" <?php echo $border_class;?> u-container-align-center u-container-style u-hover-feature u-list-item u-shape-rectangle u-list-item-1" >

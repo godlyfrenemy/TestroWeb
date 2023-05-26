@@ -5,7 +5,7 @@ if(isset($_POST["sign-up-submit"])){
 	$login = $_POST["sign-up-login"];
 	$psw = md5($_POST["sign-up-password"]);
 
-	$mysql = new mysqli("localhost", "root", "", "u981289406_testro_main");
+	$mysql = new mysqli("localhost", "root", "", "testro_db");
 
 	$q = "SELECT * FROM `teacher_users` WHERE `teacher_login` = '$login'";
 	$result = $mysql->query($q);

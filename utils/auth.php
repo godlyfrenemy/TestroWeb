@@ -16,7 +16,7 @@
 	if(isset($_POST["auth-submit"])){
 		$login = $_POST["auth-login"];
 		$password = md5($_POST["auth-password"]);	
-		$mysql = new mysqli("localhost", "root", "", "u981289406_testro_main");
+		$mysql = new mysqli("localhost", "root", "", "testro_db");
 		$mysql->autocommit(true);
 
 		if(userWithLoginExists($mysql, $login)) {

@@ -5,7 +5,7 @@ if(isset($_POST["auth-submit"])){
 	$login = $_POST["auth-login"];
 	$psw = md5($_POST["auth-password"]);
 	
-	$mysql = new mysqli("localhost", "root", "", "u981289406_testro_main");
+	$mysql = new mysqli("localhost", "root", "", "testro_db");
 
 	$query = "SELECT * FROM `teacher_users` WHERE `teacher_login` = '$login' AND `teacher_password` = '$psw'";
 	$result = $mysql->query($query);

@@ -11,7 +11,7 @@
         }        
     }
 
-    $mysql = new mysqli("localhost", "root", "", "u981289406_testro_main");  
+    $mysql = new mysqli("localhost", "root", "", "testro_db");  
     $mysql->autocommit(true);
     includeTests($mysql);
     $mysql->close();

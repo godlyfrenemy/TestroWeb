@@ -51,7 +51,7 @@ $(document).ready(function() {
     $(".editable-answer-name").on("focusout", function(event){
        var _tableName = 'answers';
         var _result = {
-            name: 'text',
+            name: 'answer_text',
             value: $(this).val()
         };
         var _condition = {

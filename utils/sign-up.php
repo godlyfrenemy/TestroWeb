@@ -1,7 +1,7 @@
 <?php
 
 function userWithLoginExists($mysql, $login) {
-	$query = "SELECT * FROM `teacher_users` WHERE `teacher_login` = '$login'";
+	$query = "CALL GetTeacherByLogin(" . $login  . ");";
 	$result = $mysql->query($query);
 	return $result->num_rows != 0;
 }
@@ -18,7 +18,7 @@ if(isset($_POST["sign-up-submit"])){
 	$login = $_POST["sign-up-login"];
 	$password = md5($_POST["sign-up-password"]);
 
-	$mysql = new mysqli("localhost", "root", "", "u981289406_testro_main");
+	$mysql = new mysqli("localhost", "root", "", "testro_db");
 
 	if(userWithLoginExists($mysql, $login))
 		header("location: ../cabinet-login.php?userExists=true");

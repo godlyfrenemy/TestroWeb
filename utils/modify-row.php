@@ -4,7 +4,7 @@
 		if(is_null($result))
 			return;
 
-		$mysql = new mysqli("localhost", "root", "", "u981289406_testro_main");  
+		$mysql = new mysqli("localhost", "root", "", "testro_db");  
 	    $mysql->autocommit(true);
 	    $query = "UPDATE `" . $tableName . "` SET `" . $result["name"] . "` = '" . $result["value"] . "' WHERE `" . $condition["name"] . "` = '" . $condition["value"] . "';";
 	    $mysql->query($query);

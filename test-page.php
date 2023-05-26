@@ -1,19 +1,19 @@
 <?php
     session_start();
     function getTestInfo($mysql) {
-        $query = "SELECT * FROM `tests` WHERE `test_id` = " . $_GET['testId'] . " AND `teacher_id` = " . $_SESSION['user_id'];
+        $query = "SELECT * FROM `tests` WHERE `test_id` = " . $_GET['testId'];
         $result = $mysql->query($query);
         return $result->num_rows > 0 ? $result->fetch_assoc() : null;      
     }
 
     function getTestData($mysql, $testDataId) {
-        $query = "SELECT * FROM `test_data` WHERE `test_data_id` = " . $testDataId;
+        $query = "SELECT * FROM `tests_data` WHERE `test_data_id` = " . $testDataId;
         $result = $mysql->query($query);
         return $result->num_rows > 0 ? $result->fetch_assoc() : null;       
     }
 
     function getTestQuestions($mysql) {
-        $query = "SELECT * FROM `questions` WHERE `test_id` = " . $_GET['testId'];
+        $query = "CALL GetTestQuestions(" . $_GET['testId'] .  ");";
         $result = $mysql->query($query);
         $questions = array();
         while ($question = $result->fetch_assoc()) {
@@ -23,7 +23,8 @@
     }
 
     function getTestTypes($mysql){
-        $query = "SELECT * FROM `test_types` WHERE is_ready = true";
+        $query = "SELECT * FROM `test_types` WHERE `is_ready` = 1";
+        mysqli_next_result($mysql);
         $result = $mysql->query($query);
         $testTypes = array();
         while ($type = $result->fetch_assoc()) {
@@ -51,7 +52,7 @@
         echo '</select>';
     }
 
-    $mysql = new mysqli("localhost", "root", "", "u981289406_testro_main");  
+    $mysql = new mysqli("localhost", "root", "", "testro_db");  
     $mysql->autocommit(true);
 
     $testInfo = getTestInfo($mysql);
