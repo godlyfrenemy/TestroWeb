@@ -10,7 +10,7 @@
 <html lang="ru" style="font-size: 18px;">
     <head>
         <title>
-            Кабінет
+            Вхід
         </title>
         <meta charset="utf-8">
             <link href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" rel="shortcut icon" type="image/x-icon">
@@ -18,14 +18,12 @@
                     <link href="https://codepen.io/ig_design/pen/KKVQpVP?editors=1000" rel="canonical">
                         <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
                             <link href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css" rel="stylesheet">
-                                <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-6bce046e7128ddf9391ccf7acbecbf7ce0cbd7b6defbeb2e217a867f51485d25.js">
-                                </script>
-                                <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf87ac46bc933074b8c557d.js">
-                                </script>
-                                <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js">
-                                </script>
+                                <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-6bce046e7128ddf9391ccf7acbecbf7ce0cbd7b6defbeb2e217a867f51485d25.js"></script>
+                                <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf87ac46bc933074b8c557d.js"></script>
+                                <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js"></script>
                                 <link href="styles/cabinet-login.css" rel="stylesheet" type="text/css">
-                                <?php include_once("utils/common-head.php"); ?>
+                                <?php include_once("utils/common-head.php"); ?>                           
+                                <script class="u-script" type="text/javascript" src="scripts/cabinet-login.js" defer=""></script>
                             </link>
                         </link>
                     </link>
@@ -39,15 +37,15 @@
             <div class="u-clearfix u-sheet u-sheet-1">
                 <div class="section">
                     <div class="container">
-                        <div class="row full-height justify-content-center">
+                        <div class="row justify-content-center">
                             <div class="col-12 text-center">
                                 <div class="section pb-5 pt-5 pt-sm-2 text-center">
                                     <h6 class="mb-0 pb-3">
                                         <span>
-                                            Log In
+                                            Log in
                                         </span>
                                         <span>
-                                            Sign Up
+                                            Sign up
                                         </span>
                                     </h6>
                                     <input class="checkbox" id="reg-log" name="reg-log" type="checkbox">
@@ -97,7 +95,7 @@
                                                             ?>
                                                             <form action="utils/sign-up.php" id="sign-up-form" method="post" name="sign-up-form">
                                                                 <div class="form-group">
-                                                                    <input autocomplete="off" minlength="4" class="form-style" id="sign-up-name" name="sign-up-name" placeholder="Повне ім'я" type="text" required oninvalid="setCustomValidity('Заповніть поле')" oninput="setCustomValidity('')">
+                                                                    <input autocomplete="off" minlength="4" class="form-style" id="sign-up-fullname" name="sign-up-fullname" placeholder="Повне ім'я" type="text" required oninvalid="setCustomValidity('Заповніть поле')" oninput="setCustomValidity('')">
                                                                         <i class="input-icon uil uil-user">
                                                                         </i>
                                                                     </input>

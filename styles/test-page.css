@@ -416,10 +416,6 @@
 }
 
 select {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  background-color: transparent;
   border: none;
   padding: 0 1em 0 0;
   margin: 0 auto;
@@ -429,7 +425,6 @@ select {
   cursor: inherit;
   line-height: inherit;
   z-index: 1;
-  outline: none;
 }
 
 .select {
@@ -438,7 +433,6 @@ select {
   align-items: center;
   position: relative;
   min-width: 15ch;
-  max-width: 30ch;
   border: 1px solid var(--select-border);
   border-radius: 0.25em;
   padding: 0.25em 0.5em;
@@ -449,9 +443,7 @@ select {
   background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
   margin: 0 auto;
 }
-.select select, .select::after {
-  grid-area: select;
-}
+
 
 select:focus + .focus {
   position: absolute;
@@ -463,21 +455,21 @@ select:focus + .focus {
   border-radius: inherit;
 }
 
-.select--disabled {
-  cursor: not-allowed;
-  background-color: #eee;
-  background-image: linear-gradient(to top, #ddd, #eee 33%);
-}
-
 label {
   font-size: 1.125rem;
   font-weight: 500;
 }
 
-.select + label {
-  margin-top: 2rem;
-}
-
 option{
   text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+}
+.container .item {
+  flex: 1 0 50%;
 }

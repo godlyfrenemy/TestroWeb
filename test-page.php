@@ -33,6 +33,16 @@
         return $testTypes;  
     }
 
+    function getMarkSelectHTML($testInfo){
+        echo '<select name="test-mark" onchange="this.form.submit()">';
+        for($i = 5; $i <= 12; $i++)
+        {
+          $selectedText = $i == $testInfo['test_mark'] ? ' selected' : '';
+          echo '<option value="' . $i .'"' . $selectedText . '>' . $i . ' балів</option>';
+        }
+        echo '</select>';
+    }
+
     function getTimeSelectHTML($testData){
         echo '<select name="time-constraint" onchange="this.form.submit()">';
         for($i = 5; $i <= 50; $i += 5)
@@ -42,6 +52,17 @@
         }
         echo '</select>';
     }
+
+    function getQuestionTimeSelectHTML($testData){
+        echo '<select name="question-time-constraint" onchange="this.form.submit()">';
+        for($i = 5; $i <= 50; $i += 5)
+        {
+          $selectedText = $i == $testData['test_question_time_constraint'] ? ' selected' : '';
+          echo '<option value="' . $i .'"' . $selectedText . '>' . $i . ' секунд</option>';
+        }
+        echo '</select>';
+    }
+
 
     function getTypeSelectHTML($testTypes, $testData){
         echo '<select name="type-constraint" onchange="this.form.submit()">';
@@ -120,23 +141,11 @@
                                     <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-3">
                                         <div class="u-border-2 u-border-grey-75 u-container-layout u-valign-top u-container-layout-5">
                                             <div class="u-container-style u-grey-10 u-group u-group-1">
-                                                <div class="u-container-layout u-container-layout-6">
-                                                    <label class="u-align-center u-text u-text-default u-text-4" for="standard-select">
-                                                        Ліміт часу на тест
-                                                    </label>
-                                                    <div class="select">
-                                                      <form method="POST" action="/utils/modify-test-time.php?testId=<?=$_GET['testId'];?>">
-                                                        <?php getTimeSelectHTML($testData); ?>
-                                                      </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="u-container-style u-grey-10 u-group u-group-2">
-                                                <div class="u-container-layout u-container-layout-6">
-                                                    <label class="u-align-center u-text u-text-default u-text-4" for="standard-select">
+                                                <div class="u-container-layout u-container-layout-6 container">
+                                                    <label class="u-text item">
                                                         Тип тесту
                                                     </label>
-                                                    <div class="select select--multiple">
+                                                    <div class="select item">
                                                       <form method="POST" action="/utils/modify-test-type.php?testId=<?=$_GET['testId'];?>">
                                                         <?php getTypeSelectHTML($testTypes, $testData); ?>
                                                       </form>
@@ -144,6 +153,43 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="u-container-style u-grey-10 u-group u-group-1">
+                                                <div class="u-container-layout u-container-layout-6 container">
+                                                    <label class="u-text item">
+                                                        Оцінка за тест
+                                                    </label>
+                                                    <div class="select item">
+                                                      <form method="POST" action="/utils/modify-test-mark.php?testId=<?=$_GET['testId'];?>">
+                                                        <?php getMarkSelectHTML($testInfo); ?>
+                                                      </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="u-container-style u-grey-10 u-group u-group-1">
+                                                <div class="u-container-layout u-container-layout-6 container">
+                                                    <label class="u-text item">
+                                                        Час на тест
+                                                    </label>
+                                                    <div class="select item">
+                                                      <form method="POST" action="/utils/modify-test-time.php?testId=<?=$_GET['testId'];?>">
+                                                        <?php getTimeSelectHTML($testData); ?>
+                                                      </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="u-container-style u-grey-10 u-group u-group-1">
+                                                <div class="u-container-layout u-container-layout-6 container">
+                                                    <label class="u-text item">
+                                                        Час на запитання
+                                                    </label>
+                                                    <div class="select item">
+                                                      <form method="POST" action="/utils/modify-test-question-time.php?testId=<?=$_GET['testId'];?>">
+                                                        <?php getQuestionTimeSelectHTML($testData); ?>
+                                                      </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                             <br>
                                             <br>
                                             <a class="u-align-center u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-gradient u-none u-radius-4 u-text-body-alt-color u-btn-3" href="/utils/add-test-question.php?testId=<?=$_GET['testId'];?>" style="margin: 15px auto 0;">

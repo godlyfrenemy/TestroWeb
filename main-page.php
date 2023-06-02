@@ -205,10 +205,10 @@
                                                 </input>
                                             </div>
                                             <div class="u-form-send-message u-form-send-success">
-                                                Thank you! Your message has been sent.
+                                                Дякуємо, Ваше повідомлення було відправлене
                                             </div>
                                             <div class="u-form-send-error u-form-send-message">
-                                                Unable to send your message. Please fix errors then try again.
+                                                Неможливо відправити повідомлення, спробуйте пізніше
                                             </div>
                                             <input name="recaptchaResponse" type="hidden" value="">
                                                 <input name="formServices" type="hidden" value="96f35237b948ba444dd10da9d611477f">
