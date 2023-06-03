@@ -35,5 +35,6 @@ $(document).ready(function(){
             'test-to-find': ""
         };
         showTests(data);
+        $('#test-to-find').val("");
     });
 });

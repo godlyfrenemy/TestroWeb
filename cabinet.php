@@ -11,6 +11,8 @@
             </script>
             <script class="u-script" defer="" src="scripts/ajax-get-tests.js" type="text/javascript">
             </script>
+            <script class="u-script" defer="" src="scripts/ajax-create-test.js" type="text/javascript">
+            </script>
         </link>
     </head>
     <body class="u-body u-xl-mode" data-lang="ru">
@@ -19,20 +21,24 @@
             <form class="container u-container-style u-group u-palette-5-dark-1 u-shape-rectangle">
                 <input class="first-item" id="test-to-find" name="test-to-find" oninput="setCustomValidity('')" oninvalid="setCustomValidity('Заповніть поле')" placeholder="Назва тесту" required="" type="input" style="color: black; text-align: center; font-size: 25px;" />
                 <a class="u-align-center u-border-2 u-btn u-btn-round u-gradient u-none u-radius-4 u-btn-3 u-text-hover-white item" id="refresh-test-submit">
-                    <span class="u-file-icon u-icon">
+                    <span class="u-align-center u-file-icon u-icon">
                         <img alt="" src="/images/refresh-black.png"/>
                     </span>
                 </a>
-                <input class="u-align-center u-border-2 u-btn u-btn-round u-gradient u-none u-radius-4 u-btn-3 u-text-hover-white item" id="find-test-submit" type="submit" value="Пошук"/>
-                <a class="u-align-center u-border-2 u-btn u-btn-round u-gradient u-none u-radius-4 u-btn-3 u-text-hover-white item">
+                <a class="u-align-center u-border-2 u-btn u-btn-round u-gradient u-none u-radius-4 u-btn-3 u-text-hover-white item" id="find-test-submit">
+                    <span class="u-file-icon u-icon">
+                        <img alt="" src="/images/search-icon.png"/>
+                    </span>
+                    Пошук
+                </a>
+                <a class="u-align-center u-border-2 u-btn u-btn-round u-gradient u-none u-radius-4 u-btn-3 u-text-hover-white item" id="add-test-submit">
                     <span class="u-file-icon u-icon">
                         <img alt="" src="/images/1286857.png"/>
                     </span>
                     Створити новий тест
                 </a>
             </form>
-            <br>
-            <div class="u-group-2 u-repeater-1" id="tests_list">
+            <div id="tests_list">
                 <?php include("utils/load-tests.php"); ?>
             </div>
         </div>

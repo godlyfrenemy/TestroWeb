@@ -99,11 +99,11 @@
     </head>
     <body class="u-body u-xl-mode" data-lang="ru">
         <?php include_once("header.html"); ?>
-        <section class="u-clearfix u-section-1" id="sec-498f">
-            <div class="u-clearfix u-sheet u-sheet-1">
+        <section class="u-section-1" id="sec-498f">
+            <div class="">
                 <div class="u-clearfix u-expanded-width u-gutter-10 u-layout-wrap u-layout-wrap-1">
                     <div class="u-gutter-0 u-layout">
-                        <div class="u-layout-col u-border-2 u-border-grey-75" >
+                        <div class="u-border-2 u-border-grey-75" >
                             <div class="u-size-30">
                                 <div class="u-layout-col">
                                     <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">
@@ -117,14 +117,17 @@
                                 </div>
                             </div>
                             <div class="u-size-30">
-                                <div class="u-layout-row">
-                                    <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
+                                <div class="container">
+                                    <div class="first-item">
                                         <div class="u-border-2 u-border-grey-75 u-container-layout u-container-layout-3">
                                             <div class="u-list u-list-1">
-                                                <div class="u-repeater u-repeater-1">
+                                                <div>
                                                     <?php 
-                                                      if(count($testQuestions) == 0)
-                                                        echo '<h4 class="u-align-center u-text">Тест пустий, додайте запитання кнопкою справа</h4>';
+                                                      if(count($testQuestions) == 0){
+                                                        echo '<h4 class="u-align-center u-text">Цей тест пустий</h4>';
+                                                        echo '<h4 class="u-align-center u-text">Відредагуйте його назву та властивості</h4>';
+                                                        echo '<h4 class="u-align-center u-text">Додати запитання можно за допомогою додаткових кнопок</h4>';
+                                                      }
                                                       else{
                                                         $list_item_number = 1;
                                                         foreach ($testQuestions as $question)
@@ -138,11 +141,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-3">
-                                        <div class="u-border-2 u-border-grey-75 u-container-layout u-valign-top u-container-layout-5">
-                                            <div class="u-container-style u-grey-10 u-group u-group-1">
-                                                <div class="u-container-layout u-container-layout-6 container">
-                                                    <label class="u-text item">
+                                    <div class="item">
+                                        <div class="u-border-2 u-border-grey-75 u-list-item-2">
+                                            <div class="u-grey-10 u-border-2">
+                                                <div class="container-center">
+                                                    <label class="u-text first-item">
                                                         Тип тесту
                                                     </label>
                                                     <div class="select item">
@@ -153,9 +156,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="u-container-style u-grey-10 u-group u-group-1">
-                                                <div class="u-container-layout u-container-layout-6 container">
-                                                    <label class="u-text item">
+                                            <div class="u-grey-10 u-border-2">
+                                                <div class="container-center">
+                                                    <label class="u-text first-item">
                                                         Оцінка за тест
                                                     </label>
                                                     <div class="select item">
@@ -165,9 +168,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="u-container-style u-grey-10 u-group u-group-1">
-                                                <div class="u-container-layout u-container-layout-6 container">
-                                                    <label class="u-text item">
+                                            <div class="u-grey-10 u-border-2">
+                                                <div class="container-center">
+                                                    <label class="u-text first-item">
                                                         Час на тест
                                                     </label>
                                                     <div class="select item">
@@ -177,9 +180,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="u-container-style u-grey-10 u-group u-group-1">
-                                                <div class="u-container-layout u-container-layout-6 container">
-                                                    <label class="u-text item">
+                                            <div class="u-grey-10 u-border-2">
+                                                <div class="container-center">
+                                                    <label class="u-text first-item">
                                                         Час на запитання
                                                     </label>
                                                     <div class="select item">
@@ -191,20 +194,22 @@
                                             </div>
 
                                             <br>
-                                            <br>
-                                            <a class="u-align-center u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-gradient u-none u-radius-4 u-text-body-alt-color u-btn-3" href="/utils/add-test-question.php?testId=<?=$_GET['testId'];?>" style="margin: 15px auto 0;">
-                                                <span class="u-file-icon u-icon">
-                                                    <img alt="" src="/images/1286857.png"/>
-                                                </span>
-                                                Додати питання
-                                            </a>
+                                            <div class="container">
+                                                <a class="u-border-2 u-btn u-btn-round u-gradient u-none u-radius-4 u-btn-3 u-text-hover-white item" href="/utils/add-test-question.php?testId=<?=$_GET['testId'];?>">
+                                                    <span class="u-file-icon u-icon">
+                                                        <img alt="" src="/images/1286857.png"/>
+                                                    </span>
+                                                    Додати питання
+                                                </a>
                                         
-                                            <a class="delete-test u-align-center u-border-2 u-btn u-btn-round u-gradient u-none u-radius-4 u-btn-3 u-border-palette-2-base u-hover-palette-2-base u-text-hover-white" id="<?=$_GET['testId'];?>" style="margin: 15px auto 0;">
-                                                <span class="u-file-icon u-icon">
-                                                    <img alt="" src="/images/cross.png"/>
-                                                </span>
-                                                &nbsp;Видалити тест&nbsp;
-                                            </a>
+                                                <a class="delete-test u-border-2 u-btn u-btn-round u-gradient u-none u-radius-4 u-btn-3 u-border-palette-2-base u-hover-palette-2-base u-text-hover-white item" id="<?=$_GET['testId'];?>">
+                                                    <span class="u-file-icon u-icon">
+                                                        <img alt="" src="/images/cross.png"/>
+                                                    </span>
+                                                    Видалити тест
+                                                </a>
+                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>

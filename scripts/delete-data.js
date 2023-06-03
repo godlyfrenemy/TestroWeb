@@ -19,7 +19,7 @@ $(document).ready(function() {
                         condition: _condition
                     },
                     success: afterSuccess()
-                });
+                }).done(afterSuccess);
             }
         });
     }
@@ -32,7 +32,9 @@ $(document).ready(function() {
         };
 
         var message = "Запитання"
-        function afterSuccess(){ window.location.reload(); }
+        function afterSuccess(){
+            window.location.reload();
+        }
         deleteData($(this), message, _tableName, _condition, afterSuccess);
     });
     $(".delete-test").on("click", function(event){
@@ -43,7 +45,10 @@ $(document).ready(function() {
         };
 
         var message = "Тест"
-        function afterSuccess(){  window.location.replace("cabinet.php"); }
+        function afterSuccess(){  
+            window.location.replace("cabinet.php"); 
+            window.location.reload();
+        }
         deleteData($(this), message, _tableName, _condition, afterSuccess);
     });
 });
