@@ -8,7 +8,7 @@
     function GetTestTotalQuestionsAmount($test_id){
         $mysql = new mysqli("localhost", "root", "", "testro_db");
         $mysql->autocommit(true);
-        $query = "SELECT COUNT(*) AS `total_count` FROM `test_questions` WHERE `test_id` = '" . $test_id . "';";
+        $query = "CALL GetTestQuestionsCount('" . $test_id . "');";
         $result = $mysql->query($query);
         return $result->num_rows != 0 ? $result->fetch_assoc()['total_count'] : 0;
     }
@@ -43,9 +43,9 @@
     }
 
     function GetPupilData($mysql, $pupil_id){
-        $query = "SELECT * FROM `pupils_data` LEFT JOIN `pupil_users`
-                  ON `pupil_users`.`pupil_data_id` = `pupils_data`.`pupil_data_id`
-                  WHERE `pupil_id` = '" . $pupil_id . "'";
+        $mysql = new mysqli("localhost", "root", "", "testro_db");
+        $mysql->autocommit(true);
+        $query = "CALL GetPupilData('" . $pupil_id . "');";
         $result = $mysql->query($query);
         return $result->num_rows != 0 ? $result->fetch_assoc() : [];
     }

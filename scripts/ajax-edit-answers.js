@@ -1,6 +1,22 @@
 $(document).ready(function(){
-    function changeAnswers(data){
-        $.post('utils/ajax-change-correct-answer.php', data);
+    function changeAnswers(_data){
+        $.ajax({
+            type: "POST",
+            url: 'utils/ajax-change-correct-answer.php',
+            data: _data
+        }).done(function(){
+            showAnswers(_data);
+        });
+    }
+
+    function addAnswer(_data){
+        $.ajax({
+            type: "POST",
+            url: 'utils/add-question-answer.php',
+            data: _data
+        }).done(function(){
+            showAnswers(_data);
+        });
     }
 
     function showAnswers(_data) {
@@ -11,6 +27,7 @@ $(document).ready(function(){
             data: _data,
             success: function(data) {               
                 resultHTML = data;
+                console.log(data);
                 $('#answers-' + _data['question']).html(resultHTML).show()
             }
         }).done(function(){      
@@ -25,6 +42,14 @@ $(document).ready(function(){
             'question': $("#question-answer-" + $(this).val()).val() 
         };
         changeAnswers(data);
-        showAnswers(data);
+    });
+
+    $('body').on("click", ".add-answer", function(e){
+        e.preventDefault();
+        var data = {
+            'question_id': $(this).attr("id"),
+            'question': $(this).attr("id")
+        };
+        addAnswer(data);
     });
 });

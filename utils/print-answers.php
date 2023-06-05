@@ -7,6 +7,6 @@
 
         while ($answer_data = $result->fetch_assoc()) 
                 include("{$_SERVER['DOCUMENT_ROOT']}/answer-element-include.php");
-                                                 
+
         $mysql->close();
 ?>

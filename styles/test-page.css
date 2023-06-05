@@ -101,3 +101,13 @@ option{
   flex-grow: 1;
   margin: 10px;
 }
+
+.max-width-item{
+  flex: 1 0 100%;
+  margin: 10px;
+}
+
+.half-width-item{
+  flex: 1 1 45%;
+  margin: 10px;
+}
