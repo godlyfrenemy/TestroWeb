@@ -8,7 +8,7 @@ $(document).ready(function() {
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
           confirmButtonText: 'Так, видаліть вже його!',
-          cancelButtonText: 'Віддай сало! (відмінити)'
+          cancelButtonText: 'Відмінити'
         }).then((result) => {
             if (result.isConfirmed){
                 $.ajax({
@@ -18,8 +18,8 @@ $(document).ready(function() {
                         tableName: _tableName,
                         condition: _condition
                     },
-                    success: afterSuccess()
-                }).done(afterSuccess);
+                    success: afterSuccess
+                });
             }
         });
     }
@@ -31,11 +31,10 @@ $(document).ready(function() {
             value: $(this).attr('id')
         };
 
-        var message = "Запитання"
-        function afterSuccess(){
+        var message = "Запитання";
+        deleteData($(this), message, _tableName, _condition, function() {
             window.location.reload();
-        }
-        deleteData($(this), message, _tableName, _condition, afterSuccess);
+        });
     });
     $(".delete-test").on("click", function(event){
         var _tableName = 'tests';
@@ -46,9 +45,10 @@ $(document).ready(function() {
 
         var message = "Тест"
         function afterSuccess(){  
-            window.location.replace("cabinet.php"); 
-            window.location.reload();
+            window.location.replace("cabinet.php");
         }
-        deleteData($(this), message, _tableName, _condition, afterSuccess);
+        deleteData($(this), message, _tableName, _condition, function(){
+            window.location.replace("cabinet.php");
+        });
     });
 });

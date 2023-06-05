@@ -88,18 +88,16 @@ option{
   align-content: top;
 }
 
-.container-center {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  align-content: center;
+.with-border{
+  border: 1px solid black;
 }
 
 .first-item {
-  flex: auto;
+  flex: 1 0 45%;
   margin: 10px;
 }
 
 .item {
+  flex-grow: 1;
   margin: 10px;
 }

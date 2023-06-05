@@ -13,7 +13,7 @@ $(document).ready(function(){
                 resultHTML = data;
 
                 if(isEmpty(resultHTML))
-                    resultHTML = "<h3 class='u-align-center u-text-hover-white'>Жодного тесту не зайдено</h3>";
+                    resultHTML = "<h3>Жодного тесту не зайдено</h3>";
 
                 $('#tests_list').html(resultHTML).show();
             }

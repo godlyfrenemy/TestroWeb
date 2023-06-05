@@ -73,6 +73,17 @@
         echo '</select>';
     }
 
+    function getMistakesCorrectionSelectHTML($testData){
+        echo '<select name="mistakes-correction" onchange="this.form.submit()">';
+        for($i = 0; $i <= 1; $i++)
+        {
+          $selectedText = $i == $testData['test_mistakes_correction'] ? ' selected' : '';
+          $optionText = $i == 0 ? "Відсутня" : "Наявна";
+          echo '<option value="' . $i .'"' . $selectedText . '>' . $optionText . '</option>';
+        }
+        echo '</select>';
+    }
+
     $mysql = new mysqli("localhost", "root", "", "testro_db");  
     $mysql->autocommit(true);
 
@@ -92,9 +103,9 @@
         <?php include_once("utils/common-head.php"); ?>
         <link href="/styles/test-page.css" rel="stylesheet" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script class="u-script" type="text/javascript" src="scripts/edit-answers.js" defer=""></script>
-        <script class="u-script" type="text/javascript" src="scripts/edit-text-input.js" defer=""></script>
-        <script class="u-script" type="text/javascript" src="scripts/delete-data.js" defer=""></script>
+        <script class="u-script" type="text/javascript" src="scripts/ajax-edit-answers.js" defer=""></script>
+        <script class="u-script" type="text/javascript" src="scripts/ajax-edit-text-input.js" defer=""></script>
+        <script class="u-script" type="text/javascript" src="scripts/ajax-delete-data.js" defer=""></script>
         </link>
     </head>
     <body class="u-body u-xl-mode" data-lang="ru">
@@ -144,8 +155,8 @@
                                     <div class="item">
                                         <div class="u-border-2 u-border-grey-75 u-list-item-2">
                                             <div class="u-grey-10 u-border-2">
-                                                <div class="container-center">
-                                                    <label class="u-text first-item">
+                                                <div class="container">
+                                                    <label class="u-text u-valign-middle u-align-center first-item">
                                                         Тип тесту
                                                     </label>
                                                     <div class="select item">
@@ -157,8 +168,8 @@
                                                 </div>
                                             </div>
                                             <div class="u-grey-10 u-border-2">
-                                                <div class="container-center">
-                                                    <label class="u-text first-item">
+                                                <div class="container">
+                                                    <label class="u-text u-valign-middle u-align-center first-item">
                                                         Оцінка за тест
                                                     </label>
                                                     <div class="select item">
@@ -169,8 +180,8 @@
                                                 </div>
                                             </div>
                                             <div class="u-grey-10 u-border-2">
-                                                <div class="container-center">
-                                                    <label class="u-text first-item">
+                                                <div class="container">
+                                                    <label class="u-text u-valign-middle u-align-center first-item">
                                                         Час на тест
                                                     </label>
                                                     <div class="select item">
@@ -181,13 +192,25 @@
                                                 </div>
                                             </div>
                                             <div class="u-grey-10 u-border-2">
-                                                <div class="container-center">
-                                                    <label class="u-text first-item">
+                                                <div class="container">
+                                                    <label class="u-text u-valign-middle u-align-center first-item">
                                                         Час на запитання
                                                     </label>
                                                     <div class="select item">
                                                       <form method="POST" action="/utils/modify-test-question-time.php?testId=<?=$_GET['testId'];?>">
                                                         <?php getQuestionTimeSelectHTML($testData); ?>
+                                                      </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="u-grey-10 u-border-2">
+                                                <div class="container">
+                                                    <label class="u-text u-valign-middle u-align-center first-item">
+                                                        Робота над помилками
+                                                    </label>
+                                                    <div class="select item">
+                                                      <form method="POST" action="/utils/modify-test-mistakes-correction.php?testId=<?=$_GET['testId'];?>">
+                                                        <?php getMistakesCorrectionSelectHTML($testData); ?>
                                                       </form>
                                                     </div>
                                                 </div>
