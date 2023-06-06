@@ -43,12 +43,26 @@ $(document).ready(function() {
             value: $(this).attr('id')
         };
 
-        var message = "Тест"
-        function afterSuccess(){  
-            window.location.replace("cabinet.php");
-        }
+        var message = "Тест";
         deleteData($(this), message, _tableName, _condition, function(){
             window.location.replace("cabinet.php");
+        });
+    });
+    $(".delete-answer").on("click", function(event){
+        var result = false;
+        $.ajax({
+            type: "POST",
+            url: 'utils/delete-row.php',
+            data: {
+                tableName: 'answers',
+                condition: {
+                    name: 'answer_id',
+                    value: $(this).val()
+                }
+            },
+            success: function() {
+                console.log("#answer-element-" + $(this).val());
+            }
         });
     });
 });

@@ -84,6 +84,7 @@ option{
 .container {
   display: flex;
   flex-wrap: wrap;
+  gap: 10px 10px;
   align-items: top;
   align-content: top;
 }
@@ -103,7 +104,7 @@ option{
 }
 
 .max-width-item{
-  flex: 1 0 100%;
+  flex: 1 1 100%;
   margin: 10px;
 }
 

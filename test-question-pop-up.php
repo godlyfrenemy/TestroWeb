@@ -31,7 +31,7 @@
                                             <?php include("utils/print-answers.php"); ?>
                                         </div>
                                     </div>
-                                    <button class="add-answer u-btn-round u-radius-4 u-btn-3 u-text-hover-white u-hover-palette-1-base active" id="<?=$question['question_id']?>">
+                                    <button class="add-answer u-btn-round u-radius-4 u-btn-3 u-text-hover-white u-hover-palette-1-base item active" id="<?=$question['question_id']?>">
                                         Додати питання
                                     </button>
                                 </div>

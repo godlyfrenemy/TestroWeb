@@ -218,14 +218,14 @@
 
                                             <br>
                                             <div class="container">
-                                                <a class="u-border-2 u-btn u-btn-round u-gradient u-none u-radius-4 u-btn-3 u-text-hover-white item" href="/utils/add-test-question.php?testId=<?=$_GET['testId'];?>">
+                                                <a class="u-border-2 u-btn u-btn-round u-radius-4 u-btn-3 u-text-hover-white item" href="/utils/add-test-question.php?testId=<?=$_GET['testId'];?>">
                                                     <span class="u-file-icon u-icon">
                                                         <img alt="" src="/images/1286857.png"/>
                                                     </span>
                                                     Додати питання
                                                 </a>
                                         
-                                                <a class="delete-test u-border-2 u-btn u-btn-round u-gradient u-none u-radius-4 u-btn-3 u-border-palette-2-base u-hover-palette-2-base u-text-hover-white item" id="<?=$_GET['testId'];?>">
+                                                <a class="delete-test u-border-2 u-btn u-btn-round u-radius-4 u-btn-3 u-border-palette-2-base u-hover-palette-2-base u-text-hover-white item" id="<?=$_GET['testId'];?>">
                                                     <span class="u-file-icon u-icon">
                                                         <img alt="" src="/images/cross.png"/>
                                                     </span>

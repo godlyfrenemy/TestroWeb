@@ -1,3 +1,36 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 10px;
+  padding: 10px;
+  align-items: top;
+  align-content: top;
+}
+
+.with-border{
+  border: 1px solid black;
+}
+
+.first-item {
+  flex: 1 0 45%;
+  margin: 10px;
+}
+
+.item {
+  flex-grow: 1;
+  margin: 10px;
+}
+
+.max-width-item{
+  flex: 1 0 90%;
+  margin: 10px;
+}
+
+.half-width-item{
+  flex: 1 1 45%;
+  margin: 10px;
+}
+
 .u-dialog-section-4 .u-dialog-1 {
   width: 645px;
   min-height: 813px;

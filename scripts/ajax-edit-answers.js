@@ -27,7 +27,6 @@ $(document).ready(function(){
             data: _data,
             success: function(data) {               
                 resultHTML = data;
-                console.log(data);
                 $('#answers-' + _data['question']).html(resultHTML).show()
             }
         }).done(function(){      

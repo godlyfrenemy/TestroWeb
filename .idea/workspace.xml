@@ -6,7 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="3250c84f-1ba7-4e06-97e9-6534ae5d2962" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/get-pupil-results-data.php" beforeDir="false" afterPath="$PROJECT_DIR$/utils/get-pupil-results-data.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/answer-element-include.php" beforeDir="false" afterPath="$PROJECT_DIR$/answer-element-include.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/ajax-edit-answers.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/ajax-edit-answers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/question.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/question.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/results.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/results.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/test-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/test-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/test-page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-question-pop-up.php" beforeDir="false" afterPath="$PROJECT_DIR$/test-question-pop-up.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ajax-print-answers.php" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ajax-print-answers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/print-answers.php" beforeDir="false" afterPath="$PROJECT_DIR$/utils/print-answers.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,26 +33,31 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2Qjpe2m2FpB3qXRxk5Uo3fpLxme" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/xampp/htdocs&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/xampp/htdocs",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\xampp\htdocs\scripts" />
@@ -61,11 +74,14 @@
       <workItem from="1685876940218" duration="91000" />
       <workItem from="1685877503783" duration="4997000" />
       <workItem from="1685897342408" duration="1194000" />
-      <workItem from="1685984542138" duration="20357000" />
+      <workItem from="1685984542138" duration="25660000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

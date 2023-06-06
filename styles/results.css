@@ -13,6 +13,7 @@ footer {
     flex-wrap: wrap;
     align-items: center;
     align-content: center;
+    gap: 10px 10px;
 }
 
 .with-border{
@@ -29,7 +30,7 @@ footer {
 }
 
 .item {
-    margin: 20px;
+    margin: 10px;
 }
 
 .u-section-1{
