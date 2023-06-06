@@ -152,7 +152,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="item">
+                                    <div class="max-third-width-item">
                                         <div class="u-border-2 u-border-grey-75 u-list-item-2">
                                             <div class="u-grey-10 u-border-2">
                                                 <div class="container">
@@ -230,6 +230,13 @@
                                                         <img alt="" src="/images/cross.png"/>
                                                     </span>
                                                     Видалити тест
+                                                </a>
+
+                                                <a class="u-align-center u-border-2 u-btn u-btn-round u-radius-4 u-btn-3 u-text-hover-white max-width-item" href="/test-results.php?testId=<?=$_GET['testId'];?>">
+                                                    <span class="u-file-icon u-icon">
+                                                        <img alt="" src="/images/results_icon.png"/>
+                                                    </span>
+                                                    Результати тестувань
                                                 </a>
                                             </div>
                                             

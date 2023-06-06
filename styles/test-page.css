@@ -103,6 +103,11 @@ option{
   margin: 10px;
 }
 
+.max-third-width-item{
+    flex: 1 0 25%;
+    margin: 10px;
+}
+
 .max-width-item{
   flex: 1 1 100%;
   margin: 10px;
