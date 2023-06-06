@@ -1,7 +1,7 @@
 <link href="/styles/pop-up.css" rel="stylesheet" type="text/css">
     <section class="u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-valign-middle u-dialog-section-4" id="question-<?=$question['question_id']?>">
-        <div class="u-align-center u-container-align-center u-container-style u-dialog u-gradient u-dialog-1">
-            <div class="u-container-layout u-valign-middle u-container-layout-1">
+        <div class="u-align-center u-container-align-center u-container-style u-dialog u-gradient u-dialog-1" style="overflow-y: auto; max-height: 90vh;">
+            <div class="">
                 <div class="u-clearfix u-expanded-width u-gutter-6 u-layout-wrap u-layout-wrap-1">
                     <div class="u-gutter-0 u-layout">
                         <form class="u-layout-col">

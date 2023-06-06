@@ -36,6 +36,7 @@ $(document).ready(function() {
             window.location.reload();
         });
     });
+
     $(".delete-test").on("click", function(event){
         var _tableName = 'tests';
         var _condition = {
@@ -48,8 +49,12 @@ $(document).ready(function() {
             window.location.replace("cabinet.php");
         });
     });
-    $(".delete-answer").on("click", function(event){
-        var result = false;
+
+    $('body').on("click", ".delete-answer", function(e){
+        e.preventDefault();
+        
+        var elementToDelete = "#answer-element-" + $(this).val();
+
         $.ajax({
             type: "POST",
             url: 'utils/delete-row.php',
@@ -60,8 +65,8 @@ $(document).ready(function() {
                     value: $(this).val()
                 }
             },
-            success: function() {
-                console.log("#answer-element-" + $(this).val());
+            success: function(data) {
+                $(elementToDelete).remove();
             }
         });
     });

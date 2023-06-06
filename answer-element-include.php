@@ -11,7 +11,7 @@
                 if($answer_data['answer_id'] != $question['correct_answer_id'])
                     echo 'u-hover-palette-1-base active">Позначити як правильну</button>';
                 else
-                    echo 'u-border-palette-3-dark-1" disabled>Правильна відповідь</button>';
+                    echo 'u-border-palette-4-base" disabled>Правильна відповідь</button>';
 
                 if($answer_idx > 3)
                     echo '<button type="button" value="' . $answer_data['answer_id'] . '" class="delete-answer u-border-2 u-btn-round u-radius-4 u-btn-3 u-border-palette-2-base u-hover-palette-2-base u-text-hover-white item active">
