@@ -52,8 +52,9 @@ $(document).ready(function() {
 
     $('body').on("click", ".delete-answer", function(e){
         e.preventDefault();
-        
+
         var elementToDelete = "#answer-element-" + $(this).val();
+        var questionId = $(this).closest(".question-data").attr('id').replace("answers-", "");
 
         $.ajax({
             type: "POST",
@@ -66,7 +67,11 @@ $(document).ready(function() {
                 }
             },
             success: function(data) {
-                $(elementToDelete).remove();
+                console.log(questionId);
+                var data = {
+                    'question': questionId
+                };
+                showAnswers(data);
             }
         });
     });

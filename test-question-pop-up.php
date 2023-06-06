@@ -26,14 +26,9 @@
                                     <h4 class="u-align-center u-text u-text-3">
                                         Варіанти відповідей
                                     </h4>
-                                    <div class="u-expanded-width u-list u-list-1">
-                                        <div id="answers-<?=$question['question_id']?>" class="container">
-                                            <?php include("utils/print-answers.php"); ?>
-                                        </div>
+                                    <div id="answers-<?=$question['question_id']?>" class="container question-data">
+                                        <?php include("utils/print-answers.php"); ?>
                                     </div>
-                                    <button class="add-answer u-btn-round u-radius-4 u-btn-3 u-text-hover-white u-hover-palette-1-base item active" id="<?=$question['question_id']?>">
-                                        Додати питання
-                                    </button>
                                 </div>
                             </div>
                         </form>
