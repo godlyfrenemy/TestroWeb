@@ -1,4 +1,4 @@
-<link href="/styles/pop-up.css" rel="stylesheet" type="text/css">
+
     <section class="u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-valign-middle u-dialog-section-4" id="question-<?=$question['question_id']?>">
         <div class="u-align-center u-container-align-center u-container-style u-dialog u-gradient u-dialog-1" style="overflow-y: auto; max-height: 90vh;">
             <div class="">
@@ -15,10 +15,29 @@
                                 </div>
                             </div>
                             <div class="u-align-justify u-container-style u-layout-cell u-size-20 u-layout-cell-2">
-                                <div class="u-border-2 u-border-grey-75 u-container-layout u-container-layout-3">
-                                    <p class="u-align-center u-text u-text-default u-text-2">
-                                        Додати вставку фото та міні фото збоку
-                                    </p>
+                                <div class="u-border-2 u-border-grey-75 u-container-layout u-container-layout-3 ">
+                                        <div class="image-form u-align-center container">
+                                              <div class="preview container max-width-item with-border" id="question-image-preview-<?=$question['question_id']?>">
+                                                    <?php
+                                                        if($question['image'] != null)
+                                                        {
+                                                            echo '<p class="label-max-width-item" style="margin: 0 auto">Поточний файл</p>';
+                                                            echo "<img class='photo-max-width-item' src='data:image/jpeg;base64," . base64_encode($question['image']) . "'/>";
+                                                        }
+                                                        else
+                                                            echo '<p class="item">Жодного файлу не обрано</p>';
+                                                    ?>
+                                              </div>
+                                              <div class="u-align-center label-max-width-item container">
+                                                    <label class="item" for="question-image-<?=$question['question_id']?>">
+                                                        Оберіть файл для тесту (PNG, JPG)
+                                                    </label>
+                                                    <input type="file" name="uploadFile" class="question-image max-width-item" id="question-image-<?=$question['question_id']?>"
+                                                      name="question-image-<?=$question['question_id']?>"
+                                                      accept="*.jpg, *.jpeg, *.png"
+                                                    />
+                                              </div>
+                                        </div>
                                 </div>
                             </div>
                             <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-3">

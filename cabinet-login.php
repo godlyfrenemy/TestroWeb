@@ -13,20 +13,11 @@
             Вхід
         </title>
         <meta charset="utf-8">
-            <link href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" rel="shortcut icon" type="image/x-icon">
-                <link color="#111" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" rel="mask-icon">
-                    <link href="https://codepen.io/ig_design/pen/KKVQpVP?editors=1000" rel="canonical">
-                        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-                            <link href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css" rel="stylesheet">
-                                <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-6bce046e7128ddf9391ccf7acbecbf7ce0cbd7b6defbeb2e217a867f51485d25.js"></script>
-                                <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf87ac46bc933074b8c557d.js"></script>
-                                <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js"></script>
-                                <link href="styles/cabinet-login.css" rel="stylesheet" type="text/css">
-                                <?php include_once("utils/common-head.php"); ?>                           
-                                <script class="u-script" type="text/javascript" src="scripts/cabinet-login.js" defer=""></script>
-                            </link>
-                        </link>
-                    </link>
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+                <link href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css" rel="stylesheet">
+                    <link href="styles/cabinet-login.css" rel="stylesheet" type="text/css">
+                    <?php include_once("utils/common-head.php"); ?>                           
+                    <script class="u-script" type="text/javascript" src="scripts/cabinet-login.js" defer=""></script>
                 </link>
             </link>
         </meta>
@@ -130,8 +121,4 @@
         </section>
         <?php include_once("footer.html");?>
     </body>
-    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js">
-    </script>
-    <script crossorigin="" src="https://cdpn.io/cpe/boomboom/pen.js?key=pen.js-12418115-cb79-680a-4d0c-fddbd1adbe10">
-    </script>
 </html>

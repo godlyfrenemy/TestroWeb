@@ -13,8 +13,6 @@
                 else
                     echo 'u-border-palette-4-base" disabled>Правильна відповідь</button>';
 
-                echo "<script>console.log(". $answer_idx . ");</script>";
-
                 if($answer_idx > 4)
                     echo '<button type="button" value="' . $answer_data['answer_id'] . '" class="delete-answer u-border-2 u-btn-round u-radius-4 u-btn-3 u-border-palette-2-base u-hover-palette-2-base u-text-hover-white item active">
                             Видалити відповідь

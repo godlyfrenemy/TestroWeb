@@ -9,9 +9,7 @@ $(document).ready(function(){
             success: function(data) {               
                 test_id = data;
             }
-        }).done(function(){      
-            
-            console.log(test_id);
+        }).done(function(){
             window.location.replace("test-page.php?testId=" + test_id);
         });
     }

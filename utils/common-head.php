@@ -24,14 +24,3 @@
         ]
 }
 </script>
-<meta content="#478ac9" name="theme-color"/>
-<link href="/" rel="canonical"/>
-<meta content="@" name="twitter:site"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="Головна" name="twitter:title"/>
-<meta content="WebSite4693941" name="twitter:description"/>
-<meta content="Головна" property="og:title"/>
-<meta content="" property="og:description"/>
-<meta content="website" property="og:type"/>
-<meta data-intl-tel-input-cdn-path="intlTelInput/"/>
-<meta content="Головна" property="og:title"/>

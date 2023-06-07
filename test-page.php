@@ -102,10 +102,12 @@
         </title>
         <?php include_once("utils/common-head.php"); ?>
         <link href="/styles/test-page.css" rel="stylesheet" type="text/css">
+        <link href="/styles/pop-up.css" rel="stylesheet" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script class="u-script" type="text/javascript" src="scripts/ajax-edit-answers.js" defer=""></script>
         <script class="u-script" type="text/javascript" src="scripts/ajax-edit-text-input.js" defer=""></script>
         <script class="u-script" type="text/javascript" src="scripts/ajax-delete-data.js" defer=""></script>
+        <script class="u-script" type="text/javascript" src="scripts/get-question-image.js" defer=""></script>
         </link>
     </head>
     <body class="u-body u-xl-mode" data-lang="ru">
