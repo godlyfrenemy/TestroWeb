@@ -70,12 +70,6 @@ function writeFile(file, questionId){
     processData: false, // important
     contentType: false, // important
     dataType : 'json',
-    data: formData, 
-    success: function(data){
-      console.log(data);
-    },
-    error: function(data){
-      console.log(data);
-    }
+    data: formData
   });
 }

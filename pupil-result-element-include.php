@@ -28,15 +28,6 @@
                     <?php echo $pupil_result['total_mark']; ?>
                 </a>
             </h4>
-            <a class="u-align-center u-border-2 u-btn u-btn-round u-radius-4 u-btn-3 u-text-hover-white item" id="<?=$pupil_id;?>">
-                <span class="u-file-icon u-icon">
-                    <img alt="" src="/images/results_icon.png"/>
-                </span>
-                Детальні результати учня
-            </a>
         </div>
-
     </div>
-
-    <?php include("{$_SERVER['DOCUMENT_ROOT']}/test-result-pop-up.php"); ?>
 </div>

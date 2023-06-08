@@ -9,6 +9,7 @@
         </title>
         <?php include_once("utils/common-head.php"); ?>
         <link href="/styles/results.css" rel="stylesheet" type="text/css"/>
+        <script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.19.3/package/dist/xlsx.full.min.js"></script>
         <script class="u-script" type="text/javascript" src="scripts/ajax-get-pupil-results.js" defer=""></script>
     </head>
     <body class="u-body u-xl-mode" data-lang="ru">
@@ -27,6 +28,12 @@
                         <img alt="" src="/images/search-icon.png"/>
                     </span>
                     Пошук
+                </a>
+                <a class="u-align-center u-border-2 u-btn u-btn-round u-radius-4 u-btn-3 u-text-hover-white item" id="download-test-results">
+                    <span class="u-file-icon u-icon">
+                        <img alt="" src="/images/download.png"/>
+                    </span>
+                    Зберегти результати
                 </a>
             </form>
             <div id="test-results-list" class="container">
