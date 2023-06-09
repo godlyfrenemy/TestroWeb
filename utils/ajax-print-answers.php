@@ -4,9 +4,7 @@
 
         $query = "SELECT * FROM `questions` WHERE `question_id` = " . $_POST['question'];
         $question = $mysql->query($query)->fetch_assoc();
-
-        $query = "SELECT * FROM `answers` WHERE `answer_id` IN (SELECT `answer_id` FROM `question_answers` WHERE `question_id` = '" . $_POST['question'] . "');";
-        $result = $mysql->query($query);
+        $result = $mysql->query("CALL GetQuestionAnswers('" . $_POST['question'] . "');");
 
         echo '<div class="u-expanded-width u-list u-list-1"><div class="container">';
 

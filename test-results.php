@@ -33,7 +33,7 @@
                     <span class="u-file-icon u-icon">
                         <img alt="" src="/images/download.png"/>
                     </span>
-                    Зберегти результати
+                    Деталі результатів
                 </a>
             </form>
             <div id="test-results-list" class="container">

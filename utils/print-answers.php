@@ -2,8 +2,7 @@
         $mysql = new mysqli("localhost", "root", "", "testro_db");  
         $mysql->autocommit(true);
 
-        $query = "SELECT * FROM `answers` WHERE `answer_id` IN (SELECT `answer_id` FROM `question_answers` WHERE `question_id` = '" . $question['question_id'] . "');";
-        $result = $mysql->query($query);
+        $result = $mysql->query("CALL GetQuestionAnswers('" . $question['question_id'] . "');");
 
         echo '<div class="u-expanded-width u-list u-list-1">
               <div class="container">';

@@ -3,8 +3,7 @@
 	{
 		$mysql = new mysqli("localhost", "root", "", "testro_db");  
 	    $mysql->autocommit(true);
-	    $query = "DELETE FROM `" . $tableName . "` WHERE `" . $condition["name"] . "` = '" . $condition["value"] . "';";
-	    $mysql->query($query);
+	    $mysql->query("CALL DeleteRow('" . $tableName . "', '" . $condition["name"] . "', '" . $condition["value"] . "');");
 	    $mysql->close();
     } 
 

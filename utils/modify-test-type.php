@@ -1,7 +1,7 @@
 <?php
     session_start();
     function getTestInfo($mysql) {
-        $query = "CALL GetTestInfo(" . $_GET['testId'] . ", " . $_SESSION['user_id'] . ");";       
+        $query = "CALL GetTestInfo(" . $_GET['testId'] . ");";       
         mysqli_next_result($mysql);
         $result = $mysql->query($query);
         return $result->num_rows > 0 ? $result->fetch_assoc() : null;      
@@ -10,7 +10,7 @@
     function modifyTestTime($mysql, $testDataValue) {
         $testInfo = getTestInfo($mysql);
         $testDataId = !is_null($testInfo) && !empty($testInfo) ? $testInfo['test_data_id'] : -1;
-        $query = "UPDATE `tests_data` SET `test_type_constraint_id` = " . $testDataValue . " WHERE `test_data_id` = " . $testDataId;
+        $query = "CALL ModifyTestData('test_type_constraint_id', '" . $testDataValue . "', '" . $testDataId . "');";
         mysqli_next_result($mysql);
         return $mysql->query($query);
     }

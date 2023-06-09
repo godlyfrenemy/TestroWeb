@@ -1,13 +1,12 @@
 <?php
 	function userWithLoginExists($mysql, $login) {
-		$query = "SELECT * FROM `teacher_users` WHERE `teacher_login` = '$login'";
-		$result = $mysql->query($query);
+		$result = $mysql->query("CALL GetTeacherUserByLogin('" . $login . "');");
 		return $result->num_rows != 0;
 	}
 
 	function getUserIdIfExists($mysql, $login, $password){
-		$query = "SELECT * FROM `teacher_users` WHERE `teacher_login` = '$login' AND `teacher_password` = '$password'";
-		$result = $mysql->query($query);
+		mysqli_next_result($mysql);
+		$result = $mysql->query("CALL GetTeacherUserByLoginAndPass('" . $login . "', '" . $password . "');");
 		return $result->num_rows != 0 ? $result->fetch_assoc()['teacher_id'] : -1;
 	}
 

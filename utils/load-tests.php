@@ -12,7 +12,9 @@
             while($test_data = $result->fetch_assoc()){
                 include("{$_SERVER['DOCUMENT_ROOT']}/test-element-include.php");
             }       
-        }        
+        }
+        else
+            echo "<h3 class='u-align-center u-valign-center'>Жодного тесту не було створено</h3>";       
     }
 
     function includeTestsByName($mysql) {

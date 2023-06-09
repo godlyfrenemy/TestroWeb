@@ -3,8 +3,7 @@
         session_start();
 
     function includePupilResults($mysql, $test_id) {
-        $query = "SELECT * FROM `pupil_test_completions` WHERE `test_id` = '" . $test_id . "'";
-        $result = $mysql->query($query);
+        $result = $mysql->query("CALL GetPupilTestCompletions('" . $test_id . "');");
 
         if($result->num_rows > 0){
             while($pupil_data = $result->fetch_assoc()){
@@ -12,9 +11,8 @@
                 include("{$_SERVER['DOCUMENT_ROOT']}/pupil-result-element-include.php");
             }
         }
-        else{
+        else
             echo "<h3 class='u-align-center u-valign-center'>Ще ніхто не проходив тест</h3>";
-        }
     }
 
     function includePupilResultsByName($mysql, $test_id, $pupil_to_find) {

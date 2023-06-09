@@ -6,7 +6,7 @@
 
 		$mysql = new mysqli("localhost", "root", "", "testro_db");  
 	    $mysql->autocommit(true);
-	    $query = "UPDATE `" . $tableName . "` SET `" . $result["name"] . "` = '" . $result["value"] . "' WHERE `" . $condition["name"] . "` = '" . $condition["value"] . "';";
+	    $query = "CALL ModifyRow('" . $tableName . "', '" . $result["name"] . "', '" . $result["value"] . "', '" . $condition["name"] . "', '" . $condition["value"] . "');";
 	    $mysql->query($query);
 	    $mysql->close();
     } 

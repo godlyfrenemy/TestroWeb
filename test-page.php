@@ -35,7 +35,7 @@
 
     function getMarkSelectHTML($testInfo){
         echo '<select name="test-mark" onchange="this.form.submit()">';
-        for($i = 5; $i <= 12; $i++)
+        for($i = 1; $i <= 12; $i++)
         {
           $selectedText = $i == $testInfo['test_mark'] ? ' selected' : '';
           echo '<option value="' . $i .'"' . $selectedText . '>' . $i . ' балів</option>';
@@ -45,7 +45,7 @@
 
     function getTimeSelectHTML($testData){
         echo '<select name="time-constraint" onchange="this.form.submit()">';
-        for($i = 5; $i <= 50; $i += 5)
+        for($i = 0; $i <= 50; $i += 5)
         {
           $selectedText = $i == $testData['test_time_constraint'] ? ' selected' : '';
           echo '<option value="' . $i .'"' . $selectedText . '>' . $i . ' хвилин</option>';
@@ -55,7 +55,7 @@
 
     function getQuestionTimeSelectHTML($testData){
         echo '<select name="question-time-constraint" onchange="this.form.submit()">';
-        for($i = 5; $i <= 50; $i += 5)
+        for($i = 0; $i <= 50; $i += 5)
         {
           $selectedText = $i == $testData['test_question_time_constraint'] ? ' selected' : '';
           echo '<option value="' . $i .'"' . $selectedText . '>' . $i . ' секунд</option>';
