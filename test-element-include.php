@@ -6,6 +6,9 @@
             </a>
         </h4>
         <div class="first-item container">
+            <a class="showQRCode u-align-center u-border-2 u-btn u-btn-round u-radius-4 u-btn-3 u-text-hover-white item" id="<?=$test_data['test_id'];?>">
+                QR-код
+            </a>
             <a class="u-align-center u-border-2 u-btn u-btn-round u-radius-4 u-btn-3 u-text-hover-white item" href="/test-results.php?testId=<?=$test_data['test_id'];?>">
                 <span class="u-file-icon u-icon">
                     <img alt="" src="/images/results_icon.png"/>

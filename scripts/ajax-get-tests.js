@@ -14,6 +14,17 @@ $(document).ready(function(){
         showTests(data);
         $('#test-to-find').val("");
     });
+    $('body').on("click", ".showQRCode", function(e){
+        e.preventDefault();
+        Swal.fire({
+            title: 'QR-код тесту',
+            imageUrl: 'https://api.qrserver.com/v1/create-qr-code/?data=' + $(this).attr('id') + '&amp;size=150x150',
+            imageWidth: 200,
+            imageHeight: 200,
+            imageAlt: 'QR Code',
+            confirmButtonText: 'Закрити'
+          })
+    });
 });
 
 function isEmpty(value) {

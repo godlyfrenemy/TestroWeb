@@ -11,7 +11,6 @@
         $testInfo = getTestInfo($mysql);
         $testDataId = !is_null($testInfo) && !empty($testInfo) ? $testInfo['test_data_id'] : -1;
         $query = "CALL ModifyTestData('test_question_time_constraint', '" . $testDataValue . "', '" . $testDataId . "');";
-        $query = "UPDATE `tests_data` SET `test_question_time_constraint` = " . $testDataValue . " WHERE `test_data_id` = " . $testDataId;
         mysqli_next_result($mysql);
         return $mysql->query($query);
     }
