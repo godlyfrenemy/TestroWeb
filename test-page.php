@@ -45,7 +45,8 @@
 
     function getTimeSelectHTML($testData){
         echo '<select name="time-constraint" onchange="this.form.submit()">';
-        for($i = 0; $i <= 50; $i += 5)
+        echo '<option value="0" ' . (0 == $testData['test_time_constraint'] ? ' selected' : '') . '>Без обмежень</option>';
+        for($i = 5; $i <= 50; $i += 5)
         {
           $selectedText = $i == $testData['test_time_constraint'] ? ' selected' : '';
           echo '<option value="' . $i .'"' . $selectedText . '>' . $i . ' хвилин</option>';
@@ -55,7 +56,11 @@
 
     function getQuestionTimeSelectHTML($testData){
         echo '<select name="question-time-constraint" onchange="this.form.submit()">';
-        for($i = 0; $i <= 50; $i += 5)
+
+        if($testData['test_type_constraint_id'] == 1)
+            echo '<option value="0" ' . (0 == $testData['test_question_time_constraint'] ? ' selected' : '') . '>Без обмежень</option>';
+
+        for($i = 5; $i <= 50; $i += 5)
         {
           $selectedText = $i == $testData['test_question_time_constraint'] ? ' selected' : '';
           echo '<option value="' . $i .'"' . $selectedText . '>' . $i . ' секунд</option>';

@@ -12,7 +12,16 @@
         $testDataId = !is_null($testInfo) && !empty($testInfo) ? $testInfo['test_data_id'] : -1;
         $query = "CALL ModifyTestData('test_type_constraint_id', '" . $testDataValue . "', '" . $testDataId . "');";
         mysqli_next_result($mysql);
-        return $mysql->query($query);
+        $result = $mysql->query($query);
+
+        if($result && $test_info['test_question_time_constraint'] == 0 && $testInfo['test_type_constraint_id'] != 1)
+        {
+            $query = "CALL ModifyTestData('test_question_time_constraint', '5', '" . $testDataId . "');";
+            mysqli_next_result($mysql);
+            $result = $mysql->query($query);
+        }
+
+        return $result;
     }
 
     $mysql = new mysqli("localhost", "root", "", "testro_db");  
