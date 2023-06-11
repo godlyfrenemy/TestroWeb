@@ -1,11 +1,12 @@
 <?php
-	function userWithLoginExists($mysql, $login) {
+	function userWithLoginExists($login) {
+		include("db-connection.php");
 		$result = $mysql->query("CALL GetTeacherUserByLogin('" . $login . "');");
 		return $result->num_rows != 0;
 	}
 
-	function getUserIdIfExists($mysql, $login, $password){
-		mysqli_next_result($mysql);
+	function getUserIdIfExists($login, $password){
+		include("db-connection.php");
 		$result = $mysql->query("CALL GetTeacherUserByLoginAndPass('" . $login . "', '" . $password . "');");
 		return $result->num_rows != 0 ? $result->fetch_assoc()['teacher_id'] : -1;
 	}
@@ -14,12 +15,10 @@
 
 	if(isset($_POST["auth-submit"])){
 		$login = $_POST["auth-login"];
-		$password = md5($_POST["auth-password"]);	
-		$mysql = new mysqli("localhost", "root", "", "testro_db");
-		$mysql->autocommit(true);
+		$password = md5($_POST["auth-password"]);
 
-		if(userWithLoginExists($mysql, $login)) {
-			$userId = getUserIdIfExists($mysql, $login, $password);
+		if(userWithLoginExists($login)) {
+			$userId = getUserIdIfExists($login, $password);
 
 			if($userId != -1) {
 				$_SESSION['user_id'] = $userId;
@@ -31,7 +30,6 @@
 		else 
 			header("location: ../cabinet-login.php?isWrongLogin=true");
 		
-		$mysql->close();
 		exit();
 
 	}

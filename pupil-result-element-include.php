@@ -1,7 +1,6 @@
 <?php
     include_once("utils/get-pupil-results-data.php");
-    $mysql = new mysqli("localhost", "root", "", "testro_db");
-    $mysql->autocommit(true);
+    include("db-connection.php");
 
     $pupil_data = GetPupilData($mysql, $pupil_id);
     $pupil_result = array(

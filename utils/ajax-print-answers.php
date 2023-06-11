@@ -1,6 +1,5 @@
 <?php
-        $mysql = new mysqli("localhost", "root", "", "testro_db");
-        $mysql->autocommit(true);
+        include("db-connection.php");
 
         $query = "SELECT * FROM `questions` WHERE `question_id` = " . $_POST['question'];
         $question = $mysql->query($query)->fetch_assoc();

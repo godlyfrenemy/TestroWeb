@@ -4,8 +4,7 @@
         return $mysql->query($query);
     }
 
-    $mysql = new mysqli("localhost", "root", "", "testro_db");
-    $mysql->autocommit(true);
+    include("db-connection.php");
 
     $query = "CALL CreateQuestionAnswer('" . $_POST['question_id'] . "');";
     $result = $mysql->query($query);

@@ -1,35 +1,28 @@
 <?php
     session_start();
-    function getTestInfo($mysql) {
-        $query = "CALL GetTestInfo(" . $_GET['testId'] . ");";       
-        mysqli_next_result($mysql);
-        $result = $mysql->query($query);
+    function getTestInfo() {
+        include("db-connection.php");
+        $result = $mysql->query("CALL GetTestInfo(" . $_GET['testId'] . ");");
         return $result->num_rows > 0 ? $result->fetch_assoc() : null;      
     }
 
-    function modifyTestTime($mysql, $testDataValue) {
-        $testInfo = getTestInfo($mysql);
+    function modifyTestTime($testDataValue) {
+        $testInfo = getTestInfo();
         $testDataId = !is_null($testInfo) && !empty($testInfo) ? $testInfo['test_data_id'] : -1;
-        $query = "CALL ModifyTestData('test_type_constraint_id', '" . $testDataValue . "', '" . $testDataId . "');";
-        mysqli_next_result($mysql);
-        $result = $mysql->query($query);
+        include("db-connection.php");
+        $result = $mysql->query("CALL ModifyTestData('test_type_constraint_id', '" . $testDataValue . "', '" . $testDataId . "');");
 
         if($result && $test_info['test_question_time_constraint'] == 0 && $testInfo['test_type_constraint_id'] != 1)
         {
-            $query = "CALL ModifyTestData('test_question_time_constraint', '5', '" . $testDataId . "');";
-            mysqli_next_result($mysql);
-            $result = $mysql->query($query);
+            include("db-connection.php");
+            $result = $mysql->query("CALL ModifyTestData('test_question_time_constraint', '5', '" . $testDataId . "');");
         }
 
+        $mysql->close();
         return $result;
     }
 
-    $mysql = new mysqli("localhost", "root", "", "testro_db");  
-    $mysql->autocommit(true);
-
-    modifyTestTime($mysql, $_POST['type-constraint']);
-
-    $mysql->close();
+    modifyTestTime($_POST['type-constraint']);
     header("location: /test-page.php?testId=" . $_GET['testId']);
     exit();
 ?>

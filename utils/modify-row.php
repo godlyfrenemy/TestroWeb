@@ -4,10 +4,8 @@
 		if(is_null($result))
 			return;
 
-		$mysql = new mysqli("localhost", "root", "", "testro_db");  
-	    $mysql->autocommit(true);
-	    $query = "CALL ModifyRow('" . $tableName . "', '" . $result["name"] . "', '" . $result["value"] . "', '" . $condition["name"] . "', '" . $condition["value"] . "');";
-	    $mysql->query($query);
+		include("db-connection.php");
+	    $mysql->query("CALL ModifyRow('" . $tableName . "', '" . $result["name"] . "', '" . $result["value"] . "', '" . $condition["name"] . "', '" . $condition["value"] . "');");
 	    $mysql->close();
     } 
 

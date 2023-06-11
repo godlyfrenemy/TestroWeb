@@ -3,8 +3,7 @@
 
     function createQuestionAnswers($questionId) {
         $result = true;
-        $mysql = new mysqli("localhost", "root", "", "testro_db");  
-        $mysql->autocommit(true);
+        include("db-connection.php");
 
         for($i = 0; $i < 4 && $result == true; $i++)
             $result &= $mysql->query("CALL CreateQuestionAnswer('" . $questionId . "');");
@@ -13,8 +12,7 @@
         return $result;     
     }
 
-    $mysql = new mysqli("localhost", "root", "", "testro_db");  
-    $mysql->autocommit(true);
+    include("db-connection.php");
     $result = $mysql->query("CALL CreateTestQuestion('" . $_GET['testId'] . "');");
 
     if($result->num_rows)

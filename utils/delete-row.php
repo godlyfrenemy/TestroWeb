@@ -1,8 +1,7 @@
 <?php
 	function delete($tableName, $condition)
 	{
-		$mysql = new mysqli("localhost", "root", "", "testro_db");  
-	    $mysql->autocommit(true);
+		include("db-connection.php");
 	    $mysql->query("CALL DeleteRow('" . $tableName . "', '" . $condition["name"] . "', '" . $condition["value"] . "');");
 	    $mysql->close();
     } 

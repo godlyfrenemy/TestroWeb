@@ -1,13 +1,13 @@
 <?php
 
-function userWithLoginExists($mysql, $login) {
-	$query = "CALL GetTeacherUserByLogin('" . $login . "');";
-	$result = $mysql->query($query);
+function userWithLoginExists($login) {
+	include("db-connection.php");
+	$result = $mysql->query("CALL GetTeacherUserByLogin('" . $login . "');");
 	return $result->num_rows != 0;
 }
 
-function insertNewUserAndGetId($mysql, $login, $password, $fullname){
-	mysqli_next_result($mysql);
+function insertNewUserAndGetId($login, $password, $fullname){
+	include("db-connection.php");
 	$query = "CALL AddNewUser('" . $fullname . "', '" . $login . "', '" . $password . "');";
 	return $mysql->query($query)->fetch_assoc()['id'];
 }
@@ -19,16 +19,13 @@ if(isset($_POST["sign-up-submit"])){
 	$password = md5($_POST["sign-up-password"]);
 	$teacherFullName = $_POST["sign-up-fullname"];
 
-	$mysql = new mysqli("localhost", "root", "", "testro_db");
-
-	if(userWithLoginExists($mysql, $login))
+	if(userWithLoginExists($login))
 		header("location: ../cabinet-login.php?userExists=true");
 	else{
-		$_SESSION['user_id'] = insertNewUserAndGetId($mysql, $login, $password, $teacherFullName);
+		$_SESSION['user_id'] = insertNewUserAndGetId($login, $password, $teacherFullName);
 		header("location: ../cabinet.php");
 	} 	
 	
-	$mysql->close();
 	exit();
 }
 

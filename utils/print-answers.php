@@ -1,7 +1,5 @@
 <?php
-        $mysql = new mysqli("localhost", "root", "", "testro_db");  
-        $mysql->autocommit(true);
-
+        include("db-connection.php");
         $result = $mysql->query("CALL GetQuestionAnswers('" . $question['question_id'] . "');");
 
         echo '<div class="u-expanded-width u-list u-list-1">

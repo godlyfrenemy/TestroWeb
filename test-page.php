@@ -1,31 +1,31 @@
 <?php
     session_start();
-    function getTestInfo($mysql) {
-        $query = "SELECT * FROM `tests` WHERE `test_id` = " . $_GET['testId'];
-        $result = $mysql->query($query);
+    function getTestInfo() {
+        include("utils/db-connection.php");
+        $result = $mysql->query("SELECT * FROM `tests` WHERE `test_id` = " . $_GET['testId']);
         return $result->num_rows > 0 ? $result->fetch_assoc() : null;      
     }
 
-    function getTestData($mysql, $testDataId) {
-        $query = "SELECT * FROM `tests_data` WHERE `test_data_id` = " . $testDataId;
-        $result = $mysql->query($query);
+    function getTestData($testDataId) {
+        include("utils/db-connection.php");
+        $result = $mysql->query("SELECT * FROM `tests_data` WHERE `test_data_id` = " . $testDataId);
         return $result->num_rows > 0 ? $result->fetch_assoc() : null;       
     }
 
-    function getTestQuestions($mysql) {
-        $query = "CALL GetTestQuestions(" . $_GET['testId'] .  ");";
-        $result = $mysql->query($query);
+    function getTestQuestions() {
+        include("utils/db-connection.php");
+        $result = $mysql->query("CALL GetTestQuestions(" . $_GET['testId'] .  ");");
         $questions = array();
         while ($question = $result->fetch_assoc()) {
             $questions[] = $question;
         }
+        $mysql->close();
         return $questions;      
     }
 
-    function getTestTypes($mysql){
-        $query = "SELECT * FROM `test_types` WHERE `is_ready` = 1";
-        mysqli_next_result($mysql);
-        $result = $mysql->query($query);
+    function getTestTypes(){
+        include("utils/db-connection.php");
+        $result = $mysql->query("SELECT * FROM `test_types` WHERE `is_ready` = 1");
         $testTypes = array();
         while ($type = $result->fetch_assoc()) {
                 $testTypes[] = $type;
@@ -89,14 +89,10 @@
         echo '</select>';
     }
 
-    $mysql = new mysqli("localhost", "root", "", "testro_db");  
-    $mysql->autocommit(true);
-
-    $testInfo = getTestInfo($mysql);
-    $testData = !empty($testInfo) ? getTestData($mysql, $testInfo['test_data_id']) : null;
-    $testQuestions = !empty($testInfo) ? getTestQuestions($mysql) : null;
-    $testTypes = getTestTypes($mysql);
-    $mysql->close();
+    $testInfo = getTestInfo();
+    $testData = !empty($testInfo) ? getTestData($testInfo['test_data_id']) : null;
+    $testQuestions = !empty($testInfo) ? getTestQuestions() : null;
+    $testTypes = getTestTypes();
 ?>
 
 <!DOCTYPE html>

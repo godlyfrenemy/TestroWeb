@@ -1,10 +1,7 @@
 <?php
     session_start();
 
-    $mysql = new mysqli("localhost", "root", "", "testro_db");  
-    $mysql->autocommit(true);
-
-    mysqli_next_result($mysql);
+    include("db-connection.php");
     $mysql->query("CALL ModifyTestMark('" . $_POST['test-mark'] . "', '" . $_GET['testId'] . "');");
 
     $mysql->close();

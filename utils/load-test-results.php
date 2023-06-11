@@ -2,7 +2,8 @@
     if (session_status() != PHP_SESSION_ACTIVE)
         session_start();
 
-    function includePupilResults($mysql, $test_id) {
+    function includePupilResults($test_id) {
+        include("db-connection.php");
         $result = $mysql->query("CALL GetPupilTestCompletions('" . $test_id . "');");
 
         if($result->num_rows > 0){
@@ -12,13 +13,12 @@
             }
         }
         else
-            echo "<h3 class='u-align-center u-valign-center'>Ще ніхто не проходив тест</h3>";
+            echo "<h3 class='u-align-center u-valign-center first-item'>Ще ніхто не проходив тест</h3>";
     }
 
-    function includePupilResultsByName($mysql, $test_id, $pupil_to_find) {
-        $query = "CALL GetPupilResultsByName('" . $test_id . "', '" . $pupil_to_find . "');";
-
-        $result = $mysql->query($query);
+    function includePupilResultsByName($test_id, $pupil_to_find) {
+        include("db-connection.php");
+        $result = $mysql->query("CALL GetPupilResultsByName('" . $test_id . "', '" . $pupil_to_find . "');");
 
         if($result->num_rows > 0){
             while($pupil_data = $result->fetch_assoc()){
@@ -28,13 +28,8 @@
         }
     }
 
-    $mysql = new mysqli("localhost", "root", "", "testro_db");
-    $mysql->autocommit(true);
-
     if(isset($_GET['testId']))
-        includePupilResults($mysql, $_GET['testId']);
+        includePupilResults($_GET['testId']);
     else
-        includePupilResultsByName($mysql, $_POST['test-id'], $_POST['pupil-to-find']);
-
-    $mysql->close();
+        includePupilResultsByName($_POST['test-id'], $_POST['pupil-to-find']);
 ?>
